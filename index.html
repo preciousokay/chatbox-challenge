@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chatbox</title>
+        <style>
+            body {
+                font-family: monospace;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Creating a title to notify what the content is -->
+        <h4> ChatBox </h4>
+
+        <!-- Dedicated area for previous sent messages -->
+        <div id="chatbox"></div>
+
+        <!-- Main content to input and submit text -->
+        <input id="textinput" type="text">
+        <button id="submit" onclick="myFunction()"> Send Message </button>
+
+
+        <script>
+
+            // defining variables for elements
+            var chatbox = document.getElementById("chatbox");
+            var textinput = document.getElementById("textinput");
+            var submit = document.getElementbyId("submit");
+
+            // creating function to be processed to submit/change inner HTML
+            function myFunction(){
+                var newMessage = document.createElement("li");
+                newMessage.innerHTML = textinput.value;
+                chatbox.appendChild(newMessage);
+            };
+
+        </script>
+    </body>
+</html>
